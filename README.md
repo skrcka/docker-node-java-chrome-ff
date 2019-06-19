@@ -1,2 +1,2 @@
-#docker-node-java-chromium
+#docker-node-java-firefox
 Built on alpine linux

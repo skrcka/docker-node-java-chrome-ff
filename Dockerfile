@@ -9,7 +9,7 @@ RUN apk add bash
 #java
 RUN apk add openjdk8-jre
 
-
+#firefox
 RUN \
 # Use edge repos
 echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories && \
