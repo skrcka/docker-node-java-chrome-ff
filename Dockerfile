@@ -19,6 +19,6 @@ echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
 RUN apk update && apk upgrade && \
     apk add firefox
 
-
+WORKDIR /usr/src/app
 COPY . .
 COPY test.sh /usr/local/bin
