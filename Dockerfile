@@ -24,5 +24,3 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 USER root
 COPY . .
 COPY test.sh /usr/local/bin
-WORKDIR /usr/src/app/webdriver-test
-RUN npm install
