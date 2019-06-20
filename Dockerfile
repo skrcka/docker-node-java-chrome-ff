@@ -10,16 +10,7 @@ RUN apk add bash
 RUN apk add openjdk8-jre
 
 #chromium
-RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
-    && echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
-    && apk add --no-cache \
-    chromium@edge \
-    harfbuzz@edge \
-    nss@edge \
-    freetype@edge \
-    ttf-freefont@edge \
-    && rm -rf /var/cache/* \
-    && mkdir /var/cache/apk
+RUN apk add chromium
 
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
@@ -33,3 +24,5 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 USER root
 COPY . .
 COPY test.sh /usr/local/bin
+WORKDIR /usr/src/app/webdriver-test
+RUN npm install
