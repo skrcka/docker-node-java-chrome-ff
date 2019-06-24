@@ -17,7 +17,7 @@ echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositor
 echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 RUN apk update && apk upgrade && \
-    apk add firefox
+    apk add firefox xvfb
 
 WORKDIR /usr/src/app
 COPY . .
