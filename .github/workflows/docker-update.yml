@@ -2,8 +2,6 @@ name: Update Docker
 on:
   schedule:
     - cron:  '0 0 1,15 * *'
-    branches:
-      - main
 jobs:
   build_and_push_image:
     name: Build Docker image and push to Docker Hub
