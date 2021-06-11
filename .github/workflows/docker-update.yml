@@ -21,7 +21,7 @@ jobs:
           tags: profiq/node-java-chrome-ff:latest
       - name: Get latest chrome version
         run: |
-          echo ::set-env name=CHROME_VERSION::$(google-chrome --version 2>&1 | head -1 | cut -d'"' -f2 | sed '/^1\./s///' | cut -d'.' -f1 | sed '/Google Chrome /s///')
+          echo "CHROME_VERSION=$(google-chrome --version 2>&1 | head -1 | cut -d'"' -f2 | sed '/^1\./s///' | cut -d'.' -f1 | sed '/Google Chrome /s///')" >> $GITHUB_ENV
       - name: Push to Docker Hub with chrome version
         uses: docker/build-push-action@v2
         with:
