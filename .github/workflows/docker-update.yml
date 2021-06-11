@@ -4,7 +4,7 @@ on:
     - cron:  '0 0 1,15 * *'
 jobs:
   build_test_and_push_images:
-    name: Build Docker image for testing
+    name: Build Docker image test and deploy to DockerHub (latest, with chrome version)
     runs-on: ubuntu-latest
     env: 
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
