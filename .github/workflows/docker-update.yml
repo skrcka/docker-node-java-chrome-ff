@@ -8,8 +8,8 @@ jobs:
     name: Build Docker image test and deploy to DockerHub (latest, with chrome version)
     runs-on: ubuntu-latest
     env: 
-      DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+      DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
