@@ -24,14 +24,14 @@ jobs:
       - name: Get latest chrome version
         run: echo "CHROME_VERSION=$(google-chrome --version 2>&1 | head -1 | cut -d'"' -f2 | sed '/^1\./s///' | cut -d'.' -f1 | sed '/Google Chrome /s///')" >> $GITHUB_ENV
       - name: Tag with chrome version
-        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:chrome-${{ env.CHROME_VERSION }}
+        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:node-latest-chrome-${{ env.CHROME_VERSION }}
       - name: Get latest firefox version
         run: echo "FIREFOX_VERSION=$(firefox --version 2>&1 | head -1 | cut -d'"' -f2 | sed '/^1\./s///' | cut -d'.' -f1 | sed '/Mozilla Firefox /s///')" >> $GITHUB_ENV
       - name: Tag with firefox version
-        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:firefox-${{ env.FIREFOX_VERSION }}
+        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:node-latest-firefox-${{ env.FIREFOX_VERSION }}
       - name: Tag with chrome and firefox version
-        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:ch${{ env.CHROME_VERSION }}-ff${{ env.FIREFOX_VERSION }}
+        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:node-latest-ch${{ env.CHROME_VERSION }}-ff${{ env.FIREFOX_VERSION }}
       - name: Tag with latest
-        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:latest
+        run: docker tag profiq/node-java-chrome-ff profiq/node-java-chrome-ff:node-latest
       - name: Push to DockerHub
         run: docker push profiq/node-java-chrome-ff --all-tags

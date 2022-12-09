@@ -1,4 +1,4 @@
-FROM node:12-buster
+FROM node:latest-buster
 
 RUN apt-get update
 
